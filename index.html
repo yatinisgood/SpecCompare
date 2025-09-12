@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>iPhone 17 Pro/Pro Max vs Pixel 10 Pro/Pro XL 比較</title>
+  <style>
+    :root {
+      --bg: #0b1320;
+      --card: #121a2b;
+      --muted: #9fb0c7;
+      --accent: #4dd0e1;
+      --table-border: #22314d;
+    }
+    html, body { margin:0; font-family: system-ui, -apple-system, "Noto Sans TC", Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; background: var(--bg); color: #e6eef8; }
+    header { padding: 32px 20px 10px; text-align: center; }
+    header h1 { margin: 0 0 8px; font-size: clamp(22px, 3.6vw, 34px); letter-spacing: .5px; }
+    header p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    /* --- ✨ 修改 1: 放寬整個頁面的最大寬度 --- */
+    .wrap { max-width: 1280px; margin: 20px auto 60px; padding: 0 16px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--table-border);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      overflow: hidden;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    thead th {
+      background: linear-gradient(180deg, rgba(77,208,225,.12), rgba(77,208,225,0));
+      color:#e6eef8;
+      font-weight: 700;
+      padding: 14px 10px;
+      border-bottom:1px solid var(--table-border);
+    }
+    tbody td, tbody th { padding: 14px 10px; border-bottom:1px solid var(--table-border); vertical-align: middle; }
+    tbody tr:last-child th,
+    tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    tbody th {
+      text-align: left;
+      color: #cfe6ff;
+      white-space: nowrap;
+      /* --- ✨ 修改 2: 微調首欄寬度 --- */
+      width: 150px;
+    }
+
+    tbody tr {
+      /* --- ✨ 修改 3: 同步更新漸層寬度 --- */
+      background: linear-gradient(to right, var(--card) 150px, transparent 150px);
+    }
+
+    td { text-align: center; }
+
+    td ul {
+      margin-block: 0;
+      padding-inline-start: 20px;
+      display: inline-block;
+      text-align: left;
+    }
+
+    .model { font-weight: 700; }
+    .img-cell img { max-height: 166px; width: auto; border-radius: 12px; border: 1px solid var(--table-border); box-shadow: 0 8px 24px rgba(0,0,0,.35); background: #0a0f1a; }
+    .sub { color: var(--muted); font-size: 12px; }
+    .note { margin-top: 10px; color: var(--muted); font-size: 12px; line-height: 1.5; }
+    .badge { display:inline-block; padding: 4px 8px; border: 1px solid var(--table-border); border-radius: 999px; font-size: 12px; color: #cfe6ff; }
+
+    @media (max-width: 768px) {
+      thead {
+        display: none;
+      }
+      table, tbody, tr, th, td {
+        display: block;
+        width: 100% !important;
+      }
+      tbody th {
+        background: var(--card);
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--table-border);
+        color: var(--accent);
+        font-size: 18px;
+        font-weight: bold;
+        white-space: nowrap;
+      }
+      tbody tr:first-child th {
+        padding-top: 10px;
+      }
+      tr {
+        margin-bottom: 16px;
+        background: none;
+      }
+      td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        border-bottom: 1px dotted var(--table-border);
+      }
+      tr td:last-of-type {
+        border-bottom: 0;
+        padding-bottom: 20px;
+      }
+      td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: calc(50% - 20px);
+        text-align: left;
+        font-weight: normal;
+        color: var(--muted);
+      }
+      td ul {
+        display: block;
+        text-align: right;
+        padding-inline-start: 0;
+        list-style-position: inside;
+      }
+      .img-cell {
+        padding: 10px;
+      }
+      .img-cell img {
+        max-width: 150px;
+        margin: 0 auto;
+        display: block;
+      }
+      .img-cell::before {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>旗艦手機螢幕重點比較</h1>
+  </header>
+
+  <div class="wrap">
+    <div class="card">
+      <table>
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>
+              <div class="model">Apple iPhone 17 Pro/Pro Max</div>
+              <div class="sub">6.9"/6.3" 超Retina XDR</div>
+            </th>
+            <th>
+              <div class="model">Apple iPhone Air</div>
+              <div class="sub">6.5" 超Retina XDR</div>
+            </th>
+            <th>
+              <div class="model">Apple iPhone 17</div>
+              <div class="sub">6.3" 超Retina XDR</div>
+            </th>
+            <th>
+              <div class="model">Google Pixel 10 Pro/Pro XL</div>
+              <div class="sub">6.8" Super Actua</div>
+            </th>
+            <th>
+              <div class="model">Google Pixel 10</div>
+              <div class="sub">6.3" Super Actua</div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>圖片</th>
+            <td data-label="iPhone 17 Pro/Pro Max" class="img-cell">
+              <img alt="iPhone 17 Pro/Pro Max" src="https://www.apple.com/v/iphone-17-pro/a/images/specs/hero_iphone_pro_max__fesnqmfj1i2y_large_2x.jpg" />
+            </td>
+            <td data-label="iPhone Air" class="img-cell">
+              <img alt="iPhone Air" src="https://www.apple.com/v/iphone-air/a/images/specs/hero_iphone__cpn1mdefarma_large_2x.jpg" />
+            </td>
+            <td data-label="iPhone 17" class="img-cell">
+              <img alt="iPhone 17" src="https://www.apple.com/v/iphone-17/a/images/specs/finish_iphone__dllhck02wuye_large_2x.jpg" />
+            </td>
+            <td data-label="Pixel 10 Pro/Pro XL" class="img-cell"><img alt="Pixel 10 Pro/Pro XL" src="https://lh3.googleusercontent.com/D93LpE5G1J_UNtPaod5Zr1dlJkRXi68DM6NVI-dRpmAV5P9BKAy8GW7Wn3jEnVyJWFJXYMkCWv3U15bvz8wQPTjSp8JbTZbz1g=s6000-w6000-e365-rw-v0-nu" /></td>
+            <td data-label="Pixel 10" class="img-cell"><img alt="Pixel 10" src="https://lh3.googleusercontent.com/0udrEfNYmIpHmSaNU6fWHp3S0YJ4faYdDghUveqZxK4CfJB54EqAuQhJ9KLzY8q0xtRIBFLAQNKPnongqMjW5ry9p4KMpE6Ay7c=s6000-w6000-e365-rw-v0-nu" /></td>
+          </tr>
+          <tr>
+            <th>台灣建議售價</th>
+            <td data-label="iPhone 17 Pro/Pro Max">NT$44,900/39,900 起<span class="sub"><br/>(256GB)</span></td>
+            <td data-label="iPhone Air">NT$36,900 起<span class="sub"><br/>(256GB)</span></td>
+            <td data-label="iPhone 17">NT$29,900 起<span class="sub"><br/>(256GB)</span></td>
+            <td data-label="Pixel 10 Pro/Pro XL">NT$39,990/33,490 起<span class="sub"><br/>(256GB/128GB)<br/>*6200 商城抵用金+7800 AI Pro</span></td>
+            <td data-label="Pixel 10">NT$26,490 起<span class="sub"><br/>(128GB)<br/>*4800 商城抵用金</span></td>
+          </tr>
+          <tr>
+            <th>螢幕尺寸</th>
+            <td data-label="iPhone 17 Pro/Pro Max"><ul><li>6.9″</li><li>6.3″</li></ul></td>
+            <td data-label="iPhone Air">6.5″</td>
+            <td data-label="iPhone 17">6.3″</td>
+            <td data-label="Pixel 10 Pro/Pro XL"><ul><li>6.8″</li><li>6.3″</li></ul></td>
+            <td data-label="Pixel 10">6.3″</td>
+          </tr>
+          <tr>
+            <th>螢幕解析度</th>
+            <td data-label="iPhone 17 Pro/Pro Max"><ul><li>2868 × 1320 (460 ppi)</li><li>2622 × 1206 (460 ppi)</ul></td>
+            <td data-label="iPhone Air">2736 × 1260 (460 ppi)</td>
+            <td data-label="iPhone 17">2622 × 1206 (460 ppi)</td>
+            <td data-label="Pixel 10 Pro/Pro XL"><ul><li>2992 × 1344 (486 ppi)</li><li>2856 × 1280 (495 ppi)</ul></td>
+            <td data-label="Pixel 10">2424 × 1080 (422 ppi)</td>
+          </tr>
+          <tr>
+            <th>尺寸(高x寬x厚)</th>
+            <td data-label="iPhone 17 Pro/Pro Max"><ul><li>163.4x78x8.75</li><li>150x71.9x8.75</li></ul></td>
+            <td data-label="iPhone Air">156.2x74.7x5.64</td>
+            <td data-label="iPhone 17">149.6x71.5x7.95</td>
+            <td data-label="Pixel 10 Pro/Pro XL"><ul><li>162.8x76.6x8.5</li><li>152.8x72x8.6</li></ul></td>
+            <td data-label="Pixel 10">152.8x72x8.6</td>
+          </tr>
+          <tr>
+            <th>重量</th>
+            <td data-label="iPhone 17 Pro/Pro Max"><ul><li>231克</li><li>204克</li></ul></td>
+            <td data-label="iPhone Air">165克</td>
+            <td data-label="iPhone 17">177克</td>
+            <td data-label="Pixel 10 Pro/Pro XL"><ul><li>232克</li><li>207克</li></ul></td>
+            <td data-label="Pixel 10">207克</td>
+          </tr>
+          
+          <tr>
+            <th>比例</th>
+            <td data-label="iPhone 17 Pro/Pro Max" colspan="3">約 19.5:9(依解析度推算)</td>
+            <td data-label="Pixel 10 Pro/Pro XL" colspan="2">20:9</td>
+          </tr>
+          <tr>
+            <th>晶片</th>
+            <td data-label="iPhone 17 Pro/Pro Max">A19 Pro 6 CPU(2大4小) + 6 GPU + 16核心神經網路 + 硬體光追</td>
+            <td data-label="iPhone Air">A19 Pro 6 CPU(2大4小) + 5 GPU + 16核心神經網路 + 硬體光追</td>
+            <td data-label="iPhone 17">A19 6 CPU(2大4小) + 5 GPU + 16核心神經網路 + 硬體光追</td>
+            <td data-label="Pixel 10" colspan="2">Google Tensor G5 8 CPU (1大5中2小)</td>
+            <!-- <td data-label="Pixel 10">Google Tensor G5</td> -->
+          </tr>
+          <tr>
+            <th>動態更新率</th>
+            <td data-label="iPhone 17 Pro/Pro Max" colspan="3">ProMotion 技術，1–120 Hz</td>
+            <td data-label="Pixel 10 Pro/Pro XL">流暢顯示 1–120 Hz(LPTO)</td>
+            <td data-label="Pixel 10">流暢顯示 60–120 Hz</td>
+          </tr>
+          <tr>
+            <th>螢幕玻璃材質</th>
+            <td data-label="iPhone 17 Pro/Pro Max" colspan="3">超瓷晶盾 2 面板，超瓷晶盾背板</td>
+            <td data-label="Pixel 10 Pro/Pro XL">Corning® Gorilla® Glass Victus® 2 抗刮保護玻璃。Corning® Gorilla® Glass Victus® 2 絲滑霧面背蓋，搭配拋光質地的航太級鋁合金邊框</td>
+            <td>Corning® Gorilla® Glass Victus® 2 抗刮保護玻璃。Corning® Gorilla® Glass Victus® 2 拋光背蓋，搭配柔光質地的航太級 鋁合金邊框</td>
+          </tr>
+          <tr>
+            <th>峰值亮度</th>
+            <td data-label="iPhone" colspan="3">1000 尼特最大亮度 (標準)；1600 尼特峰值亮度 (HDR)；3000 尼特峰值亮度 (室外)；1 尼特最低亮度</td>
+            
+            <td data-label="Pixel 10 Pro/Pro XL">亮度最高可達 2,200 nit (HDR) 和 3,300 nit (峰值亮度)</td>
+            <td data-label="Pixel 10">亮度最高可達 2,000 nit (HDR) 和 3,000 nit (峰值亮度)</td>
+          </tr>
+          <tr>
+            <th>光學變焦</th>
+            <td data-label="iPhone 17 Pro/Pro Max">8倍光學變焦放大，0.5倍光學變焦縮小；故有16倍光學變焦</td>
+            <td data-label="iPhone Air">相機2倍</td>
+            <td data-label="iPhone 17">2倍光學變焦放大，0.5倍光學變焦縮小；故有4倍光學變焦</td>
+            <td data-label="Pixel 10 Pro/Pro XL">相機100倍，錄影20倍</td>
+            <td data-label="Pixel 10">相機20倍，錄影20倍</td>
+          </tr>
+          <tr>
+            <th>前置鏡頭</th>
+            <td data-label="iPhone 17 Pro/Pro Max" colspan="3">1800 萬像素，f/1.9。4K 杜比視界錄影，24 fps、25 fps、30 fps 或 60 fps
+1080p 杜比視界錄影，25 fps、30 fps 或 60 fps
+電影級模式，最高可達 4K 杜比視界 (30 fps)。支援 1080p (120 fps) 的慢動作影片</td>
+            <!-- <td data-label="iPhone Air">相機2倍</td> -->
+            <!-- <td data-label="iPhone 17">2倍光學變焦放大，0.5倍光學變焦縮小；故有4倍光學變焦</td> -->
+            <td data-label="Pixel 10 Pro/Pro XL">4,200 萬像素 Dual PD 自拍鏡頭，內建自動對焦功能。ƒ/2.2 光圈。103 度視野。1080p 錄影 (30/60 fps)，4K 錄影(30/60 fps，但4K60fps無法錄10位元</td>
+            <td data-label="Pixel 10">4,200 萬像素 Dual PD 自拍鏡頭，內建自動對焦功能。ƒ/2.2 光圈。95 度視野。1080p 錄影 (30/60 fps)，4K 錄影 (30/60 fps)，但4K60fps無法錄10位元</td>
+          </tr>
+          <tr>
+            <th>後置鏡頭</th>
+            <td data-label="iPhone 17 Pro/Pro Max">主鏡頭4800 萬像素，24mm，f/1.79。廣角鏡頭4800 萬像素，13mm，f/2.2與120度視角。望遠鏡頭4800 萬像素，100mm，f/2.8</td>
+            <td data-label="iPhone Air">主鏡頭4800 萬像素，26mm，f/1.6</td>
+            <td data-label="iPhone 17">主鏡頭4800 萬像素，26mm，f/1.6。廣角鏡頭4800 萬像素，13mm，f/2.2與120度視角</td>
+            <td data-label="Pixel 10 Pro/Pro XL">5000 萬像素 Octa PD 廣角鏡頭，ƒ/1.68 光圈。82 度視野。4800 萬像素 Quad PD 超廣角鏡頭，ƒ/1.7 光圈。123 度視野。4800 萬像素 Quad PD 望遠鏡頭，ƒ/2.8 光圈。22 度視野。</td>
+            <td data-label="Pixel 10">4,800 萬像素 Quad PD 廣角鏡頭，ƒ/1.7 光圈。82 度視野。1300 萬像素 Quad PD 超廣角鏡頭，ƒ/2.2 光圈。120 度視野。1080 萬像素 Dual PD 望遠鏡頭，ƒ/3.1 光圈。23 度視野。</td>
+          </tr>
+          <tr>
+            <th>數位變焦</th>
+            <td data-label="iPhone 17 Pro/Pro Max">相機40倍，錄影15倍</td>
+            <td data-label="iPhone Air/17" colspan="2">相機10倍，錄影6倍</td>
+            <!-- <td data-label="iPhone 17">相機10倍，錄影6倍</td> -->
+            <td data-label="Pixel 10 Pro/Pro XL">相機100倍，錄影20倍</td>
+            <td data-label="Pixel 10">相機20倍，錄影20倍</td>
+          </tr>
+          <tr>
+            <th>機身打造</th>
+            <td data-label="iPhone 17 Pro/Pro Max">鋁金屬一體成型設計</td>
+            <td data-label="iPhone Air">鈦金屬設計</td>
+            <td data-label="iPhone 17">鋁金屬設計</td>
+            <td data-label="Pixel" colspan="2">鋁合金</td>
+            
+          </tr>
+          
+          <tr>
+            <th>防水防塵等級</th>
+            <td data-label="iPhone AND pixel"  colspan="5">達到 IEC 60529 標準的 IP68 等級 (在最深達 6 公尺水中最長可達 30 分鐘)</td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="note">備註：
+      <br>1) iPhone 之「比例」為依官方解析度換算的近似值；Apple 未於官網直接標示長寬比。
+      <br>2) 建議將上方圖片連結替換成你要用的正式素材（目前先放佔位連結）。
+      <br>3) 可再加欄位（如重量、尺寸、材質、玻璃保護等），或切換成卡片版樣式。
+      <br>4) 1800像素錄製其實只有8百萬就符合規範的4k影片,就稱之為超採樣
+    </p>
+  </div>
+</body>
+</html>
