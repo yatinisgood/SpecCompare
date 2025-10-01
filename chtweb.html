@@ -142,6 +142,54 @@
     }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500;700&display=swap" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NCTT6HZ347"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NCTT6HZ347');
+    console.log('Loading GA');
+  </script>
+  <!-- Facebook Pixel Code Base -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1264897994056000');
+  // 發送一次基本的 PageView
+  // fbq('track', 'PageView'); // 如果父頁面已觸發，這裡可以不用，避免重複計算
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1264897994056000&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Facebook Pixel Code -->
+
+  <!-- LINE Tag Base Code -->
+  <script>
+  (function(g,d,o){
+    g._ltq=g._ltq||[];g._lt=g._lt||function(){g._ltq.push(arguments)};
+    var h=location.protocol==='https:'?'https://d.line-scdn.net':'http://d.line-cdn.net';
+    var s=d.createElement('script');s.async=1;
+    s.src=o||h+'/n/line_tag/public/release/v1/lt.js';
+    var t=d.getElementsByTagName('script')[0];t.parentNode.insertBefore(s,t);
+      })(window, document);
+  _lt('init', {
+    customerType: 'lap',
+    tagId: '389068e7-60d4-440e-995a-aa45c300315b'
+  });
+  // 發送一次基本的 pv
+  _lt('send', 'pv', ['389068e7-60d4-440e-995a-aa45c300315b']);
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://tr.line.me/tag.gif?c_t=lap&t_id=389068e7-60d4-440e-995a-aa45c300315b&e=pv&noscript=1" />
+  </noscript>
+  <!-- End LINE Tag Base Code -->
 </head>
 <body>
   <div class="plan-container">
@@ -161,10 +209,44 @@
         <div class="plan-original">原價<del>$398</del>/月</div>
       </div>
       <div class="plan-btns">
-        <a href="https://www.cht.com.tw/home/campaign/hamivideo/vod#tab_2" target="_blank"><button class="plan-btn">馬上訂閱 影劇館<sup>+</sup> </button></a>
+        <!-- 
+          修改重點：在 <a> 標籤上加上 onclick 事件
+          當點擊「馬上訂閱 影劇館+」時，觸發 fireHamiVideoEvents 函數
+        -->
+        <a href="https://www.cht.com.tw/home/campaign/hamivideo/vod#tab_2" target="_blank" onclick="fireHamiVideoEvents()">
+          <button class="plan-btn">馬上訂閱 影劇館<sup>+</sup> </button>
+        </a>
         <a href="https://www.cht.com.tw/home/campaign/hamivideo/tv#tab_2" target="_blank"><button class="plan-btn">馬上訂閱 電視運動館</button></a>
       </div>
     </div>
   </div>
+  <script>
+    // 專門用來觸發「影劇館+」按鈕點擊事件的函數
+    function fireHamiVideoEvents() {
+      console.log('影劇館+ 按鈕點擊，觸發 GA4, FB, LINE 事件');
+      
+      // 觸發 GA4 事件
+      if (typeof gtag === 'function') {
+        console.log('影劇館+ 按鈕點擊，觸發 GA4事件');
+        gtag('event', 'ev1111', {
+          'event_category': 'HamiVideo_Subscription'
+        });
+         console.log('影劇館+ 按鈕點擊，觸發 GA4事件 done');
+      }
+
+      // 觸發 Facebook Pixel 的 ViewContent 事件
+      if (typeof fbq === 'function') {
+        fbq('track', 'ViewContent', {product_id:'2509double11btn04'});
+      }
+
+      // 觸發 LINE Tag 的 Conversion 事件
+      if (typeof _lt === 'function') {
+        _lt('send', 'cv', {
+          type:'2509double11btn04'
+        },['389068e7-60d4-440e-995a-aa45c300315b']);
+      }
+    }
+  </script>
 </body>
+
 </html>
