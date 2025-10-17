@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PGP5RP');</script>
+<!-- End Google Tag Manager -->
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hami Video 卡片 + 圖片彈窗（大網85% + 霧化遮罩 + 關閉鈕重疊）</title>
+  <style>
+    :root {
+      --mobile-card-min: 230px;
+      --mobile-card-max: 320px;
+      --mobile-card-vw: 78vw;
+      --mobile-gap: 14px;
+      --mobile-left-extra: 10px;
+    }
+
+    body {
+      background: transparent;
+      font-family: 'Microsoft JhengHei', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #000;
+    }
+
+    /* 卡片排列 */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      gap: 0;
+      justify-content: center;
+    }
+
+    .card {
+      width: 300px;
+      aspect-ratio: 268 / 331;
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      cursor: pointer;
+      border-radius: 14px;
+      transition: transform 0.25s ease;
+      background: transparent;
+      position: relative;
+    }
+    .card:hover { transform: scale(1.04); }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      user-select: none;
+    }
+
+    #promoCard {
+      background-image: url('https://image.fevercdn.com?bucket=picture-original.fevercdn.com&filepath=hamivideo%2F1%2F69%2Ff6a287161e37e2e44f0e2f43.png');
+      background-repeat: no-repeat;
+      background-size: 95% auto;
+      background-position: center center;
+    }
+
+    /* 手機排版 */
+    @media (max-width: 640px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--mobile-gap);
+        padding-left: var(--mobile-left-extra);
+      }
+      .card {
+        width: clamp(var(--mobile-card-min), var(--mobile-card-vw), var(--mobile-card-max));
+      }
+    }
+
+    /* ====== 彈窗樣式 ====== */
+    .popup-backdrop {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+
+      /* 霧化玻璃效果 */
+      background: rgba(255, 255, 255, 0.08);         /* 淡淡的白底，增加玻璃質感 */
+      backdrop-filter: blur(10px) saturate(180%) contrast(115%);
+      -webkit-backdrop-filter: blur(10px) saturate(180%) contrast(115%);
+      transition: backdrop-filter .3s ease;
+    }
+    .popup-backdrop.active,
+    .popup-backdrop[aria-hidden="false"] { display: flex; }
+
+    .popup-panel {
+      position: relative;
+      background: transparent;
+      border-radius: 14px;
+      width: min(92vw, 960px);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+    }
+
+    /* 可點的整張圖片容器（讓關閉鈕能疊在右上角） */
+    .popup-link {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      border-radius: 14px;
+    }
+
+    .popup-img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* 桌機版：大圖縮至 85%，置中 */
+    @media (min-width: 768px) {
+      .popup-link picture { display: flex; justify-content: center; }
+      .popup-link img { width: 85%; height: auto; }
+    }
+
+    /* 關閉按鈕：重疊在圖片右上角（半透明玻璃圓鈕） */
+    .popup-close {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 40px;
+      height: 40px;
+      border: none;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border-radius: 999px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.28);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      color: #111;
+      z-index: 2;
+      transition: background .2s;
+    }
+    .popup-close:hover { background: rgba(255,255,255,0.95); }
+
+    /* 確保能點 promoCard 本體 */
+    #promoCard * { pointer-events: none; }
+
+    @media (max-width: 640px) {
+      .popup-backdrop { align-items: flex-end; }
+      .popup-panel {
+        margin-bottom: 30px;
+        width: min(96vw, 480px);
+        border-radius: 14px 14px 18px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGP5RP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <!-- 卡片列表 -->
+  <div class="container">
+    <div class="card">
+      <a href="https://hamivideo.hinet.net/hamivideo/subscribe.do?relativeProductId=23126&filteredSalesplanId=39143%2C39145&utm_source=feversocial&utm_medium=vod&utm_campaign=campaign_20251111" target="_blank" rel="noopener noreferrer">
+        <img src="https://image.fevercdn.com?bucket=picture-original.fevercdn.com&filepath=hamivideo%2F1%2F69%2F06843cf9dcb80bd20d4f1f85.png" alt="影劇館+" />
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="https://hamivideo.hinet.net/hamivideo/subscribe.do?relativeProductId=10437&filteredSalesplanId=39144%2C39146&utm_source=feversocial&utm_medium=tv&utm_campaign=campaign_20251111" target="_blank" rel="noopener noreferrer">
+        <img src="https://image.fevercdn.com?bucket=picture-original.fevercdn.com&filepath=hamivideo%2F1%2F69%2Ff435c91ce25c1d53903844b4.png" alt="電視運動館" />
+      </a>
+    </div>
+
+    <div class="card" id="promoCard">
+      <img src="https://image.fevercdn.com?bucket=picture-original.fevercdn.com&filepath=hamivideo%2F1%2F69%2Fc44050037747bce623a0c096.png" alt="兩館合購" />
+    </div>
+  </div>
+
+  <!-- ====== 彈窗（圖片版 + 霧化背景） ====== -->
+  <div class="popup-backdrop" id="subscribePopup"
+       role="dialog" aria-modal="true" aria-hidden="true"
+       aria-label="Hami Video 活動彈窗">
+    <div class="popup-panel">
+      <a class="popup-link"
+         href="https://hamivideo.hinet.net/hamivideo/subscribe.do?relativeProductId=23126%2C10437&filteredSalesplanId=39143%2C39145%2C39144%2C39146&utm_source=feversocial&utm_medium=mystery&utm_campaign=campaign_20251111"
+         target="_blank" rel="noopener noreferrer" id="promoLink">
+        <!-- 關閉鈕重疊右上角 -->
+        <button class="popup-close" id="closeBtn" aria-label="關閉彈窗" type="button">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 6 6 18M6 6l12 12"/>
+          </svg>
+        </button>
+
+        <picture>
+          <!-- 大網（桌機/平板橫向） -->
+          <source media="(min-width: 768px)" srcset="https://image.fevercdn.com/?bucket=picture-original.fevercdn.com&filepath=hamivideo%2F1%2F74%2F77b48f77bf88853225cd1f41.png">
+          <!-- 小網（手機） -->
+          <img class="popup-img"
+               src="https://image.fevercdn.com/?bucket=picture-original.fevercdn.com&filepath=hamivideo%2F1%2F74%2F16508039bf41319d2fd7a8f8.png"
+               alt="Hami Video 活動 Banner（點擊前往）"
+               width="1080" height="1350" loading="lazy">
+        </picture>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const popup     = document.getElementById('subscribePopup');
+      const promoCard = document.getElementById('promoCard');
+      const closeBtn  = document.getElementById('closeBtn');
+
+      function openPopup() {
+        popup.classList.add('active');
+        popup.setAttribute('aria-hidden', 'false');
+        closeBtn.focus();
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closePopup() {
+        popup.classList.remove('active');
+        popup.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      promoCard.addEventListener('click', openPopup);
+
+      // 關閉：按關閉鈕 / 點遮罩 / 按 ESC
+      closeBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        closePopup();
+      });
+      popup.addEventListener('click', (e) => { if (e.target === popup) closePopup(); });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && popup.classList.contains('active')) closePopup();
+      });
+    });
+  </script>
+</body>
+</html>
