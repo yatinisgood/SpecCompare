@@ -1,0 +1,141 @@
+<!-- 推薦海報 -->
+<div id="pic" style="overflow: hidden; width: 100%">
+<table cellspacing="0" cellpadding="0">
+<tr>
+<td id="pic1">
+<table>
+<tr>
+<!--海報1零日攻擊 -->
+<td style="padding: 5px;">
+<div style="position: relative; border-radius: 10px; background-color: #000; box-shadow: rgba(0, 0, 0, 0.16) 0 0 20px 0; width: 229px; padding: 0;">
+<div style="white-space: nowrap; padding: 2px 8px; border-radius: 8px; font-size: 14px; font-weight: normal; letter-spacing: 0; position: absolute; z-index: 1; background-color: rgb(218, 144, 11); filter: brightness(1.5);">台海戰爭生存指南</div>
+<div style="border-radius: 10px; width: 100%; overflow: hidden;">
+<a href="https://hamivideo.hinet.net/product/299663.do?cs=2" target="_blank">
+<img src="https://apl-hamivideo.cdn.hinet.net/HamiVideo/getHamiVideoImg.php?imageId=sourceImages@4048100280_o_20250716111913.jpg" style="width: 229px; height: 322px; display: block; pointer-events: none;">
+</a></div></div>
+</td>
+<!--海報2行騙天下KR -->
+<td style="padding: 5px;">
+<div style="position: relative; border-radius: 10px; background-color: #000; box-shadow: rgba(0, 0, 0, 0.16) 0 0 20px 0; width: 229px; padding: 0;">
+<div style="white-space: nowrap; padding: 2px 8px; border-radius: 8px; font-size: 14px; font-weight: normal; letter-spacing: 0; position: absolute; z-index: 1; background-color: rgb(218, 144, 11); filter: brightness(1.5);">朴敏英化身百變女王</div>
+<div style="border-radius: 10px; width: 100%; overflow: hidden;">
+<a href="https://hamivideo.hinet.net/product/303404.do?cs=2" target="_blank">
+<img src="https://apl-hamivideo.cdn.hinet.net/HamiVideo/getHamiVideoImg.php?imageId=sourceImages@2546105532_o_20250908173522.jpg" style="width: 229px; height: 322px; display: block; pointer-events: none;">
+</a></div></div>
+</td>
+<!--海報3灼灼韶華 -->
+<td style="padding: 5px;">
+<div style="position: relative; border-radius: 10px; background-color: #000; box-shadow: rgba(0, 0, 0, 0.16) 0 0 20px 0; width: 229px; padding: 0;">
+<div style="white-space: nowrap; padding: 2px 8px; border-radius: 8px; font-size: 14px; font-weight: normal; letter-spacing: 0; position: absolute; z-index: 1; background-color: rgb(218, 144, 11); filter: brightness(1.5);">藥行奇女子逆轉冤案</div>
+<div style="border-radius: 10px; width: 100%; overflow: hidden;">
+<a href="https://hamivideo.hinet.net/product/304579.do?cs=2" target="_blank">
+<img src="https://apl-hamivideo.cdn.hinet.net/HamiVideo/getHamiVideoImg.php?imageId=sourceImages@2011110818_o_20250911114118.jpg" style="width: 229px; height: 322px; display: block; pointer-events: none;">
+</a></div></div>
+</td>
+<!--海報4宴遇永安 -->
+<td style="padding: 5px;">
+<div style="position: relative; border-radius: 10px; background-color: #000; box-shadow: rgba(0, 0, 0, 0.16) 0 0 20px 0; width: 229px; padding: 0;">
+<div style="white-space: nowrap; padding: 2px 8px; border-radius: 8px; font-size: 14px; font-weight: normal; letter-spacing: 0; position: absolute; z-index: 1; background-color: rgb(218, 144, 11); filter: brightness(1.5);">現代菜單吃定唐朝</div>
+<div style="border-radius: 10px; width: 100%; overflow: hidden;">
+<a href="https://hamivideo.hinet.net/product/306912.do?cs=2" target="_blank">
+<img src="https://apl-hamivideo.cdn.hinet.net/HamiVideo/getHamiVideoImg.php?imageId=sourceImages@2011110908_o_20251008152734.jpg" style="width: 229px; height: 322px; display: block; pointer-events: none;">
+</a></div></div>
+</td>
+<!--海報5百次的回憶 -->
+<td style="padding: 5px;">
+<div style="position: relative; border-radius: 10px; background-color: #000; box-shadow: rgba(0, 0, 0, 0.16) 0 0 20px 0; width: 229px; padding: 0;">
+<div style="white-space: nowrap; padding: 2px 8px; border-radius: 8px; font-size: 14px; font-weight: normal; letter-spacing: 0; position: absolute; z-index: 1; background-color: rgb(218, 144, 11); filter: brightness(1.5);">車掌小姐的初戀</div>
+<div style="border-radius: 10px; width: 100%; overflow: hidden;">
+<a href="https://hamivideo.hinet.net/product/302987.do?cs=2" target="_blank">
+<img src="https://apl-hamivideo.cdn.hinet.net/HamiVideo/getHamiVideoImg.php?imageId=sourceImages@2546105476_o_20250905113207.jpg" style="width: 229px; height: 322px; display: block; pointer-events: none;">
+</a></div></div>
+</td></tr>
+</table>
+</td>
+<td id="pic2"></td>
+</tr>
+</table>
+
+<script>
+var speed = 20;
+const pic = document.getElementById('pic');
+const pic1 = document.getElementById('pic1');
+const pic2 = document.getElementById('pic2');
+
+pic2.innerHTML = pic1.innerHTML;
+// 初始位置改成一半
+pic.scrollLeft = pic.scrollWidth / 2;
+
+function Marquee() {
+if (pic.scrollLeft <= 0) {
+// 到頭就回到一半
+pic.scrollLeft = pic.scrollWidth / 2;
+} else {
+// 每次往右移動 1px
+pic.scrollLeft--;
+}
+}
+let MyMar = setInterval(Marquee, speed); // 立即啟動自動滾動
+// --- 2. 懸停時暫停/恢復 (主要控制者) ---
+pic.onmouseover = function() {
+clearInterval(MyMar);
+};
+
+pic.onmouseout = function() {
+// 為了避免在拖曳中時意外啟動，可以加上 isDown 判斷
+if (!isDown) {
+MyMar = setInterval(Marquee, speed);
+}
+};
+
+// --- 3. 手動滑動相關設定 (只負責拖曳，不控制計時器) ---
+let isDown = false;
+let startX;
+let scrollLeft;
+
+const startDragging = (e) => {
+isDown = true;
+pic.style.cursor = 'grabbing';
+startX = (e.pageX || e.touches[0].pageX) - pic.offsetLeft;
+scrollLeft = pic.scrollLeft;
+// 注意：這裡不再需要 clearInterval，因為 onmouseover 已經處理了
+};
+
+const stopDragging = (e) => {
+isDown = false;
+pic.style.cursor = 'grab';
+
+// 當滑鼠放開時，如果指標仍在元素外，則觸發 onmouseout 的邏輯
+// clientX/Y 是可視區座標，getBoundingClientRect() 也是
+const rect = pic.getBoundingClientRect();
+const x = e.clientX;
+const y = e.clientY;
+
+if (x < rect.left || x > rect.right || y < rect.top || y > rect.bottom) {
+MyMar = setInterval(Marquee, speed);
+}
+};
+
+const whileDragging = (e) => {
+if (!isDown) return;
+e.preventDefault();
+const x = (e.pageX || e.touches[0].pageX) - pic.offsetLeft;
+const walk = (x - startX) * 2;
+pic.scrollLeft = scrollLeft - walk;
+};
+
+// --- 4. 綁定拖曳事件 ---
+pic.addEventListener('mousedown', startDragging);
+pic.addEventListener('mouseup', stopDragging);
+pic.addEventListener('mouseleave', () => {
+// 當滑鼠移出時，如果正在拖曳狀態，也判定為停止拖曳
+isDown = false;
+pic.style.cursor = 'grab';
+});
+pic.addEventListener('mousemove', whileDragging);
+
+pic.addEventListener('touchstart', startDragging);
+pic.addEventListener('touchend', stopDragging);
+pic.addEventListener('touchmove', whileDragging);
+</script>
+</div>
