@@ -1,0 +1,142 @@
+<!-- 推薦海報 -->
+<div id="pic" style="overflow: hidden; width: 100%; cursor: grab;">
+<table cellspacing="0" cellpadding="0" style="user-select: none;">
+<tr>
+<td id="pic1">
+<table>
+<tr>
+<!--海報1水屬性的魔法師 -->
+<td style="padding: 5px;">
+<div style="position: relative; border-radius: 10px; background-color: #000; box-shadow: rgba(0, 0, 0, 0.16) 0 0 20px 0; width: 229px; padding: 0;">
+<div style="white-space: nowrap; padding: 2px 8px; border-radius: 8px; font-size: 14px; font-weight: normal; letter-spacing: 0; position: absolute; z-index: 1; background-color: rgb(218, 144, 11); filter: brightness(1.5);">社畜轉生開啟慢活人生</div>
+<div style="border-radius: 10px; width: 100%; overflow: hidden;">
+<a href="https://hamivideo.hinet.net/product/298337.do?cs=2" target="_blank">
+<img src="https://apl-hamivideo.cdn.hinet.net/HamiVideo/getHamiVideoImg.php?imageId=sourceImages@2251108331_o_20250725114840.jpg" style="width: 229px; height: 322px; display: block; pointer-events: none;">
+</a></div></div>
+</td>
+<!--海報2怪獸8號S2 -->
+<td style="padding: 5px;">
+<div style="position: relative; border-radius: 10px; background-color: #000; box-shadow: rgba(0, 0, 0, 0.16) 0 0 20px 0; width: 229px; padding: 0;">
+<div style="white-space: nowrap; padding: 2px 8px; border-radius: 8px; font-size: 14px; font-weight: normal; letter-spacing: 0; position: absolute; z-index: 1; background-color: rgb(218, 144, 11); filter: brightness(1.5);">最強副隊長的另一面</div>
+<div style="border-radius: 10px; width: 100%; overflow: hidden;">
+<a href="https://hamivideo.hinet.net/product/298387.do?cs=2" target="_blank">
+<img src="https://apl-hamivideo.cdn.hinet.net/HamiVideo/getHamiVideoImg.php?imageId=sourceImages@2491107782_o_20250701111603.jpg" style="width: 229px; height: 322px; display: block; pointer-events: none;">
+</a></div></div>
+</td>
+<!--海報3凡人修仙傳S4 -->
+<td style="padding: 5px;">
+<div style="position: relative; border-radius: 10px; background-color: #000; box-shadow: rgba(0, 0, 0, 0.16) 0 0 20px 0; width: 229px; padding: 0;">
+<div style="white-space: nowrap; padding: 2px 8px; border-radius: 8px; font-size: 14px; font-weight: normal; letter-spacing: 0; position: absolute; z-index: 1; background-color: rgb(218, 144, 11); filter: brightness(1.5);">化身厲飛雨闖星海</div>
+<div style="border-radius: 10px; width: 100%; overflow: hidden;">
+<a href="https://hamivideo.hinet.net/product/284555.do?cs=2" target="_blank">
+<img src="https://apl-hamivideo.cdn.hinet.net/HamiVideo/getHamiVideoImg.php?imageId=sourceImages@2694100490_o_20250120144821.jpg" style="width: 229px; height: 322px; display: block; pointer-events: none;">
+</a></div></div>
+</td>
+<!--海報4SPY X FAMILY 間諜家家酒Season 3 -->
+<td style="padding: 5px;">
+<div style="position: relative; border-radius: 10px; background-color: #000; box-shadow: rgba(0, 0, 0, 0.16) 0 0 20px 0; width: 229px; padding: 0;">
+<div style="white-space: nowrap; padding: 2px 8px; border-radius: 8px; font-size: 14px; font-weight: normal; letter-spacing: 0; position: absolute; z-index: 1; background-color: rgb(218, 144, 11); filter: brightness(1.5);">佛傑家驚險休假日</div>
+<div style="border-radius: 10px; width: 100%; overflow: hidden;">
+<a href="https://hamivideo.hinet.net/product/306684.do?cs=2" target="_blank">
+<img src="https://apl-hamivideo.cdn.hinet.net/HamiVideo/getHamiVideoImg.php?imageId=sourceImages@2143117585_o_20251004114804.jpg" style="width: 229px; height: 322px; display: block; pointer-events: none;">
+</a></div></div>
+</td>
+<!--海報5擁有超常技能的異世界流浪美食家S2 -->
+<td style="padding: 5px;">
+<div style="position: relative; border-radius: 10px; background-color: #000; box-shadow: rgba(0, 0, 0, 0.16) 0 0 20px 0; width: 229px; padding: 0;">
+<div style="white-space: nowrap; padding: 2px 8px; border-radius: 8px; font-size: 14px; font-weight: normal; letter-spacing: 0; position: absolute; z-index: 1; background-color: rgb(218, 144, 11); filter: brightness(1.5);">美食收服龍寶寶</div>
+<div style="border-radius: 10px; width: 100%; overflow: hidden;">
+<a href="https://hamivideo.hinet.net/product/306866.do?cs=2" target="_blank">
+<img src="https://apl-hamivideo.cdn.hinet.net/HamiVideo/getHamiVideoImg.php?imageId=sourceImages@2143117573_o_20251007151806.jpg" style="width: 229px; height: 322px; display: block; pointer-events: none;">
+</a></div></div>
+</td></tr>
+</table>
+</td>
+<td id="pic2"></td>
+</tr>
+</table>
+
+<script>
+const pic = document.getElementById('pic');
+const pic1 = document.getElementById('pic1');
+const pic2 = document.getElementById('pic2');
+
+// --- 1. 自動滾動相關設定 ---
+let speed = 20;
+pic2.innerHTML = pic1.innerHTML;
+pic.scrollLeft = 0;
+
+function Marquee() {
+if (pic.scrollLeft >= pic1.scrollWidth) {
+pic.scrollLeft = 0;
+} else {
+pic.scrollLeft++;
+}
+}
+
+let MyMar = setInterval(Marquee, speed); // 立即啟動自動滾動
+
+// --- 2. 懸停時暫停/恢復 (主要控制者) ---
+pic.onmouseover = function() {
+clearInterval(MyMar);
+};
+
+pic.onmouseout = function() {
+// 為了避免在拖曳中時意外啟動，可以加上 isDown 判斷
+if (!isDown) {
+MyMar = setInterval(Marquee, speed);
+}
+};
+
+// --- 3. 手動滑動相關設定 (只負責拖曳，不控制計時器) ---
+let isDown = false;
+let startX;
+let scrollLeft;
+
+const startDragging = (e) => {
+isDown = true;
+pic.style.cursor = 'grabbing';
+startX = (e.pageX || e.touches[0].pageX) - pic.offsetLeft;
+scrollLeft = pic.scrollLeft;
+// 注意：這裡不再需要 clearInterval，因為 onmouseover 已經處理了
+};
+
+const stopDragging = (e) => {
+isDown = false;
+pic.style.cursor = 'grab';
+
+// 當滑鼠放開時，如果指標仍在元素外，則觸發 onmouseout 的邏輯
+// clientX/Y 是可視區座標，getBoundingClientRect() 也是
+const rect = pic.getBoundingClientRect();
+const x = e.clientX;
+const y = e.clientY;
+
+if (x < rect.left || x > rect.right || y < rect.top || y > rect.bottom) {
+MyMar = setInterval(Marquee, speed);
+}
+};
+
+const whileDragging = (e) => {
+if (!isDown) return;
+e.preventDefault();
+const x = (e.pageX || e.touches[0].pageX) - pic.offsetLeft;
+const walk = (x - startX) * 2;
+pic.scrollLeft = scrollLeft - walk;
+};
+
+// --- 4. 綁定拖曳事件 ---
+pic.addEventListener('mousedown', startDragging);
+pic.addEventListener('mouseup', stopDragging);
+pic.addEventListener('mouseleave', () => {
+// 當滑鼠移出時，如果正在拖曳狀態，也判定為停止拖曳
+isDown = false;
+pic.style.cursor = 'grab';
+});
+pic.addEventListener('mousemove', whileDragging);
+
+pic.addEventListener('touchstart', startDragging);
+pic.addEventListener('touchend', stopDragging);
+pic.addEventListener('touchmove', whileDragging);
+
+</script>
+</div>
